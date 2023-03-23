@@ -1,0 +1,96 @@
+﻿@model IEnumerable<Ports.DAL.PORTDATA>
+
+@{
+    ViewBag.Title = "Index";
+}
+<script src="~/Scripts/jquery-3.4.1.min.js"></script>
+<script src="~/Scripts/jquery.dataTables.js"></script>
+<script src="~/Scripts/dataTables.bootstrap.js"></script>
+
+<h2>Port Lists</h2>
+<div>
+    <p>
+        @Html.ActionLink("Create New", "Create") |
+        @Html.ActionLink("Bulk Upload", "BulkUpload")
+    </p>
+</div>
+<table class="table" id="listTable">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.ID)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.NAME)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.PortCode)
+            </th>
+            @*<th>
+                    @Html.DisplayNameFor(model => model.UnctadPortCode)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Country)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Latitude)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Longitude)
+                </th>*@
+            <th>
+                @Html.DisplayNameFor(model => model.Url)
+            </th>
+            @*<th>
+                    @Html.DisplayNameFor(model => model.MainPortCode)
+                </th>*@
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.ID)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.NAME)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.PortCode)
+                </td>
+                @*<td>
+                        @Html.DisplayFor(modelItem => item.UnctadPortCode)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Country)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Latitude)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Longitude)
+                    </td>*@
+                <td>
+                    @*@Html.DisplayFor(modelItem => item.Url)*@
+                    <a href="http://@item.Url" target="_blank">@item.Url</a>
+                </td>
+                @*<td>
+                        @Html.DisplayFor(modelItem => item.MainPortCode)
+                    </td>*@
+                <td>
+                    @Html.ActionLink("Details", "Details", new { id = item.ID }, new { target = "_blank" }) |
+                    @Html.ActionLink("Delete", "Delete", new { id = item.ID }, new AjaxOptions { HttpMethod = "POST" })
+                    
+                </td>
+            </tr>
+
+}
+    </tbody>
+</table>
+<script>
+    $('#listTable').DataTable({
+    });
+</script>
+

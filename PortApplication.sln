@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30621.155
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PortApplication", "PortApplication\PortApplication.csproj", "{E5F65056-0C54-4C5D-A87E-125B61B85006}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ports.DAL", "Ports.DAL\Ports.DAL.csproj", "{32E0702E-99BA-488A-8B45-E3B45A07B2AB}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{E5F65056-0C54-4C5D-A87E-125B61B85006}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E5F65056-0C54-4C5D-A87E-125B61B85006}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E5F65056-0C54-4C5D-A87E-125B61B85006}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E5F65056-0C54-4C5D-A87E-125B61B85006}.Release|Any CPU.Build.0 = Release|Any CPU
+		{32E0702E-99BA-488A-8B45-E3B45A07B2AB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{32E0702E-99BA-488A-8B45-E3B45A07B2AB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{32E0702E-99BA-488A-8B45-E3B45A07B2AB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{32E0702E-99BA-488A-8B45-E3B45A07B2AB}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {37E73D9B-FDB6-4863-A9DC-3A8BFEC713BD}
+	EndGlobalSection
+EndGlobal

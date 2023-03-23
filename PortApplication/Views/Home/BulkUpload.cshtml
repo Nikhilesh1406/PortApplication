@@ -1,0 +1,25 @@
+﻿
+@{
+    ViewBag.Title = "BulkUpload";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+<h2>Bulk Upload Ports data</h2>
+<br>
+<br>
+@using (Html.BeginForm("Upload", "Home", FormMethod.Post, new { enctype = "multipart/form-data" }))
+{
+    <div>
+        <label> Select JSON file to create new Port </label><br><br>
+        <input type="file" name="file" id="file" /><br>
+        <input type="submit" value="Upload Port" />
+    </div>
+}
+@{
+    var message = ViewBag.Message;
+}
+@if (!string.IsNullOrEmpty(message))
+{
+    <label class="text-danger">@message</label>
+}

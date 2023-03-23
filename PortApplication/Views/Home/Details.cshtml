@@ -1,0 +1,112 @@
+﻿@model Ports.DAL.PORTDATA
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<script src="~/Scripts/jquery-3.4.1.min.js"></script>
+<script type="text/javascript"
+        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC6v5-2uaq_wusHDktM9ILcqIrlPtnZgEk&sensor=false">
+</script>
+<script type="text/javascript">
+    $(document).ready(function initialize() {
+        var lat = document.getElementById('lat').textContent
+        var lon = document.getElementById('lon').textContent
+        var myLatlng = new google.maps.LatLng(lat, lon) // This is used to center the map to show our markers
+        var mapOptions = {
+            center: myLatlng,
+            zoom: 6,
+            mapTypeId: google.maps.MapTypeId.ROADMAP,
+            marker: true
+        };
+        var map = new google.maps.Map(document.getElementById("map_canvas"), mapOptions);
+        var marker = new google.maps.Marker({
+            position: myLatlng
+        });
+        marker.setMap(map);
+    });
+</script>
+
+<h2>Details</h2>
+
+<div>
+    <h4>PORTDATA</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.NAME)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NAME)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PortCode)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PortCode)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.UnctadPortCode)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.UnctadPortCode)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Country)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Country)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Latitude)
+        </dt>
+
+        <dd>
+            @*@Html.DisplayFor(model => model.Latitude)*@
+            <label id="lat">@Model.Latitude</label>
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Longitude)
+        </dt>
+
+        <dd>
+            @*@Html.DisplayFor(model => model.Longitude)*@
+            <label id="lon">@Model.Longitude</label>
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Url)
+        </dt>
+
+        <dd>
+            <a href="http://@Model.Url" target="_blank">@Model.Url</a>
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.MainPortCode)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MainPortCode)
+        </dd>
+        <dd>
+            <div id="map_canvas" style="width: 600px; height: 600px"></div>
+        </dd>
+
+    </dl>
+    <div>
+        <label>@ViewBag.Message</label>
+    </div>
+</div>
+<p>
+    @Html.ActionLink("Back to List", "Index")
+</p>
